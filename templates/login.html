@@ -56,13 +56,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default"
                         aria-labelledby="navbarDropdownMenuLink-333">
-                        
-                        {% if session %}
-                        <a class="dropdown-item" href="/logout">Logout</a>
-                        {% else %}
+
+                        <a class="dropdown-item" href="">Logout</a>
+
                         <a class="dropdown-item" href="">Sign up</a>
-                        <a class="dropdown-item" href="/login">Login</a>
-                        {% endif %}
+                        <a class="dropdown-item" href="#">Login</a>
 
                     </div>
                 </li>
@@ -70,15 +68,37 @@
         </div>
     </nav>
 
-    <!-- MAIN BODY -->
+    <!-- MAIN BODY : LOGIN -->
     <main class="text-center">
-        <h1 class="pt-5 mt-5 ">
-            HOME
-        </h1><br>
-        <!-- <h2>
-            Name : {{name}} <br>
-            Roll : {{roll}}
-        </h2> -->
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 m-5">
+        
+                    <h1 class="mb-2">Login</h1>
+                    <hr>
+                    <form action="/login" method="POST" id="login_form">
+        
+                        <div class="form-group">
+                            <label>Email</label> 
+                            <input class="form-control" type="email" name="email">
+                        </div>
+        
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password">
+                        </div>
+        
+                        <button type="submit" class="btn btn-primary justify-content-center">Login</button>
+        
+                    </form>
+        
+                    <p class="mt-3">New here? <a href="/signup">Create Account</a></p>
+        
+                </div>
+            </div>
+        </div>
+      
     </main>
 
     <!-- FOOTER -->

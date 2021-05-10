@@ -1,13 +1,16 @@
 from flask import Flask, render_template, redirect, url_for, request, jsonify, session
+from flask_pymongo import PyMongo
+import bcrypt
 
 app = Flask(__name__)
-
 app.config['SECRET_KEY'] = "sdasdsa2313.sada231/?"
+app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/Voting"
+
+mongo = PyMongo(app)
+
 
 @app.route('/')
 def home():
-    
-
     return render_template('index.html')
 
 
@@ -97,6 +100,20 @@ def signup():
         email = req['email']
         password = req['password']
         user_type = req['user_type']
+
+        hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt(14))
+        print(hashed_pw)
+        
+        # mongo.db.user.insert_one(
+        #     {
+        #         'fname':fname,
+        #         'lname': lname,
+        #         'email': email,
+        #         'type': user_type,
+        #         'password': hashed_pw,
+        #         'vote_flag' :0
+        #     }
+        # )
 
         df = [
             {

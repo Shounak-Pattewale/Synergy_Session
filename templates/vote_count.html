@@ -1,0 +1,29 @@
+
+{% extends 'base_template.html' %}
+
+{% block main %}
+
+<div class="container pt-5 mt-5">
+    <table class="table">
+        <thead class="custom-bg-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for n in range(len) %}
+            <tr>
+                <th scope="row">{{n+1}}</th>
+                <td>{{vote_count[n]['fn']}}</td>
+                <td>{{vote_count[n]['ln']}}</td>
+                <td>{{vote_count[n]['v']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base_template.html' %}
+
+{% block main %}
+
+<div class="container custom-bg-light">
+    <div class="row justify-content-center">
+        <div class="col-md-6 m-5">
+
+            <h1 class="mb-2">Cast your Vote</h1>
+            <hr>
+            <form action="{{url_for('vote')}}" method="POST" id="login_form">
+                <legend class="col-form-label col-sm-2 pt-0"><h2>Nominees</h2></legend>
+                <fieldset class="form-group">
+                  <div class="row">
+                    <div class="col-sm-10">
+                        {% for nominee in nominees %}
+                      <div class="form-check" style="font-size: 140%; font-weight: 700; display: flex; align-items: center;">
+                        <input class="form-check-input" type="radio" name="vote" id="vote" value="{{nominee['email']}}">
+                        <label class="form-check-label radio-inline" for="vote">
+                          {{nominee['name']}}
+                        </label>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="form-group row text-center">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                  </div>
+                </div>
+              </form>
+            
+        </div>
+    </div>
+</div>
+
+<!-- POSTMAN => yes/no -->
+
+<!-- <form action="/vote" method="POST" id="login_form">
+                
+    <label for="vote">Please Vote your favourite candidate</label>
+    {% for nominee in nominees %}
+    <div class="form-group" style="display: flex; align-items: center;">
+        <input class="form-control" type="radio" name="vote">
+        <label>{{nominee}}</label>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary justify-content-center">Vote</button>
+</form> -->
+
+{% endblock %}

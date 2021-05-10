@@ -9,6 +9,13 @@ Home
     <h1 class="pt-5 mt-5 ">
         HOME
     </h1><br>
+    {% if session['logged_in'] == True %}
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+        {% endwith %}
+        {% endif %}
 </main>
 
 {% endblock %}

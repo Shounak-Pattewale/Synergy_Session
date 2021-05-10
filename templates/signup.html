@@ -1,73 +1,10 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base_template.html' %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block title %}
+Signup
+{% endblock %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        crossorigin="anonymous">
-
-    <!-- User defined -->
-    <!-- <link rel="stylesheet" href=""> -->
-
-    <title>Home | Synergy</title>
-</head>
-
-<body class="custom-bg-light">
-
-    <!-- NAVBAR -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">SYNERGY</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-            <ul class="navbar-nav mr-auto">
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-
-            </ul>
-
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-google-plus-g"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-default"
-                        aria-labelledby="navbarDropdownMenuLink-333">
-
-                        <a class="dropdown-item" href="">Logout</a>
-
-                        <a class="dropdown-item" href="">Sign up</a>
-                        <a class="dropdown-item" href="#">Login</a>
-
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
+{% block main %}
     <!-- MAIN BODY : SIGN UP -->
     <main class="text-center">
 
@@ -118,26 +55,4 @@
       
     </main>
 
-    <!-- FOOTER -->
-    <footer class="page-footer font-small bg-dark fixed-bottom">
-        <div class="footer-copyright text-center py-3" style="color:darkgrey;">SYNERGY</div>
-    </footer>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-    <!-- ADD ADDITIONAL SCRIPTS -->
-
-</body>
-
-</html>
+    {% endblock %}

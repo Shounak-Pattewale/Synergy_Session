@@ -1,0 +1,12 @@
+.custom-bg-light {
+    background: #ECE9E6 !important;  
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6) !important;  
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6) !important;
+}
+
+.custom-bg-dark {
+    background: #141E30 !important;
+    background: -webkit-linear-gradient(to right, #243B55, #141E30) !important;
+    background: linear-gradient(to right, #243B55, #141E30) !important;
+    color:ivory;
+}

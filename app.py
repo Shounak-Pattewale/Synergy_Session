@@ -1,17 +1,18 @@
 from flask import Flask, render_template, redirect, url_for, request, jsonify, session
 from flask_pymongo import PyMongo
 import bcrypt
+import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "sdasdsa2313.sada231/?"
-app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/Voting"
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 @app.route('/get/<string:var>')
@@ -38,7 +39,7 @@ def _session():
 @app.route('/temp')
 def _temp():
     name = "Shounak"
-    return render_template('index.html', n1=name)
+    return render_template('home.html', n1=name)
 
 
 @app.route('/url')
@@ -55,11 +56,11 @@ def methods():
         name = req['name']
         roll = req['roll']
 
-        return render_template('index.html', name=name, roll=roll)
+        return render_template('home.html', name=name, roll=roll)
     else:
         name = "Taha"
         roll = "1213"
-        return render_template('index.html', name=name, roll=roll)
+        return render_template('home.html', name=name, roll=roll)
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -85,7 +86,7 @@ def logout():
     
     print("CLEARING SESSION FOR : ",session['email'])
     session.clear()
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 @app.route('/signup', methods=["GET", "POST"])
@@ -133,4 +134,4 @@ def signup():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
